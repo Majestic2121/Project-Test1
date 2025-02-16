@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smita Ma'am's Group Tuitions - ICSE Coaching</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --navy-blue: #1a237e;
+        --gold: #ffd700;
+        --light-blue: #2196f3;
+        --red: #d32f2f;
+        --white: #ffffff;
+        --off-white: #f8f9fa;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background: var(--off-white);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      header {
+        background: var(--navy-blue);
+        color: var(--white);
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo h1 {
+        color: var(--gold);
+        font-size: 1.8rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--white);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 1.5rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("classroom-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        text-align: center;
+        padding: 8rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Main Content Sections */
+      .section {
+        padding: 4rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--navy-blue);
+      }
+
+      /* Mentor Section */
+      .mentor-profile {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        align-items: center;
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .mentor-profile img {
+        width: 100%;
+        border-radius: 8px;
+        max-width: 300px;
+      }
+
+      /* Strengths Grid */
+      .strengths-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .strength-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .strength-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Achievements Section */
+      .year-tabs {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .year-tab {
+        padding: 0.8rem 1.5rem;
+        background: var(--off-white);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .year-tab.active {
+        background: var(--navy-blue);
+        color: var(--white);
+      }
+
+      .results-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--white);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .results-table th {
+        background: var(--navy-blue);
+        color: var(--white);
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .results-table td {
+        padding: 0.8rem;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+      }
+
+      .results-table tr:nth-child(even) {
+        background: var(--off-white);
+      }
+
+      /* Branches Section */
+      .branches-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .branch-card {
+        background: var(--white);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Guidelines Section */
+      .guidelines-list {
+        columns: 2;
+        gap: 2rem;
+      }
+
+      .guidelines-list li {
+        margin-bottom: 1rem;
+        break-inside: avoid;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: var(--navy-blue);
+        color: var(--white);
+        text-align: center;
+        padding: 4rem 1rem;
+      }
+
+      .whatsapp-cta {
+        background: #25d366;
+        color: var(--white);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        margin-top: 2rem;
+        transition: transform 0.3s;
+      }
+
+      .whatsapp-cta:hover {
+        transform: scale(1.05);
+      }
+      /* Year Tabs */
+      .year-tabs {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .year-tab {
+        padding: 0.8rem 1.5rem;
+        background: #f0f0f0;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .year-tab.active {
+        background: #1a237e;
+        color: white;
+      }
+
+      /* Tables */
+      .achievement-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: white;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .achievement-table th {
+        background: #1a237e;
+        color: white;
+        padding: 1rem;
+      }
+
+      .achievement-table td {
+        padding: 0.8rem;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .achievement-table tr:nth-child(even) {
+        background: #f8f9fa;
+      }
+
+      .hidden {
+        display: none;
+      }
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--navy-blue);
+          flex-direction: column;
+          padding: 1rem;
+          text-align: center;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .mentor-profile {
+          grid-template-columns: 1fr;
+        }
+
+        .guidelines-list {
+          columns: 1;
+        }
+
+        .results-table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="logo">
+          <h1>Smita Ma'am's Tuitions</h1>
+        </div>
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#strengths">Strengths</a>
+          <a href="#achievements">Results</a>
+          <a href="#branches">Branches</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <h1>ICSE VIII, IX, X Coaching</h1>
+      <p>Delivering consistent results year after year</p>
+      <a href="https://wa.me/919821313298" class="whatsapp-cta">
+        <i class="fab fa-whatsapp"></i> 98213 13298
+      </a>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Your Mentor</h2>
+      <div class="mentor-profile">
+        <img src="smita-maam.jpg" alt="Smita Kapoor" />
+        <div class="mentor-info">
+          <h3>Smita Kapoor</h3>
+          <ul>
+            <li>M.Com, Diploma in Business Management</li>
+            <li>20+ years teaching experience</li>
+            <li>Former Corporate Trainer at Citibank</li>
+            <li>Specialization in Financial Basics from NSE</li>
+          </ul>
+          <p>
+            Established in 2013, we provide comprehensive coaching in History,
+            Geography, Commercial Studies, and Economics with a focus on
+            personalized attention and academic excellence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="strengths" class="section">
+      <h2>Our Strengths</h2>
+      <div class="strengths-grid">
+        <div class="strength-card">
+          <h3><i class="fas fa-users"></i> Personalized Attention</h3>
+          <p>Small batch sizes ensuring individual focus</p>
+        </div>
+        <div class="strength-card">
+          <h3><i class="fas fa-book"></i> Comprehensive Notes</h3>
+          <p>Detailed reference materials provided</p>
+        </div>
+        <div class="strength-card">
+          <h3><i class="fas fa-map-marked"></i> Mapping Techniques</h3>
+          <p>Specialized topography training</p>
+        </div>
+        <div class="strength-card">
+          <h3><i class="fas fa-chart-line"></i> Regular Evaluations</h3>
+          <p>Chapter-wise tests and vivas</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section">
+      <h2>Student Achievements</h2>
+      <div class="year-tabs">
+        <div class="year-tab active" data-year="stars">Our shining Stars</div>
+        <div class="year-tab" data-year="2023">2022-23</div>
+        <div class="year-tab" data-year="2022">2021-22</div>
+      </div>
+      <!-- Our Shining Stars Table -->
+      <table class="achievement-table" id="stars-table">
+        <tbody>
+          <tr>
+            <td>Eva Dsouza</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>98</td>
+            <td>Prisha Patani</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>93</td>
+          </tr>
+          <tr>
+            <td>Aryan Advani</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>96</td>
+            <td>Shriya Churi</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>98</td>
+          </tr>
+          <tr>
+            <td>Arjun Soni</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>94</td>
+            <td>Aarna Sanghvi</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>92</td>
+          </tr>
+          <tr>
+            <td>Rivaon Nair</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>94</td>
+            <td>Miloni Soni</td>
+            <td>NES</td>
+            <td>99</td>
+            <td>94</td>
+          </tr>
+          <tr>
+            <td>Mahek Ruparel</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>98</td>
+            <td>Kanisha Kothari</td>
+            <td>EURO</td>
+            <td>98</td>
+            <td>98</td>
+          </tr>
+          <tr>
+            <td>Subhadra</td>
+            <td>J.K.Singhania</td>
+            <td>100</td>
+            <td>97</td>
+            <td>Reyansh Kurup</td>
+            <td>J.K.Singhania</td>
+            <td>98</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>Siddharth</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>96</td>
+            <td>Kavya Joisher</td>
+            <td>NES</td>
+            <td>98</td>
+            <td>97</td>
+          </tr>
+          <tr>
+            <td>Samyak Vhora</td>
+            <td>J.K.Singhania</td>
+            <td>100</td>
+            <td>95</td>
+            <td>Siyaju Parekh</td>
+            <td>EURO</td>
+            <td>97</td>
+            <td>93</td>
+          </tr>
+          <tr>
+            <td>Parth Thakkar</td>
+            <td>SSRVM</td>
+            <td>100</td>
+            <td>99</td>
+            <td>Yug Manthur</td>
+            <td>EURO</td>
+            <td>96</td>
+            <td>97</td>
+          </tr>
+          <tr>
+            <td>Yajat</td>
+            <td>SSRVM</td>
+            <td>100</td>
+            <td>98</td>
+            <td>Aryan Kamble</td>
+            <td>SSRVM</td>
+            <td>96</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Reyansh Shah</td>
+            <td>SSRVM</td>
+            <td>100</td>
+            <td>96</td>
+            <td>Arnav Puvathoor</td>
+            <td>SSRVM</td>
+            <td>96</td>
+            <td>92</td>
+          </tr>
+          <tr>
+            <td>Dhir Mehta</td>
+            <td>SSRVM</td>
+            <td>100</td>
+            <td>94</td>
+            <td>Dhrumil</td>
+            <td>J.K.Singhania</td>
+            <td>94</td>
+            <td>92</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 2022-23 Table -->
+      <table class="achievement-table hidden" id="2023-table">
+        <tbody>
+          <tr>
+            <td>Suhani Vazirzni</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>100</td>
+            <td>Kangana Madhyan</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>90</td>
+          </tr>
+          <tr>
+            <td>Trisha Sawant</td>
+            <td>GSS</td>
+            <td>100</td>
+            <td>99</td>
+            <td>Nimay Shah</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Rudra Kurup</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>100</td>
+            <td>Jash Sachdev</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Khushbu Bajaj</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>99</td>
+            <td>Vardhaman</td>
+            <td>BB</td>
+            <td>98</td>
+            <td>93</td>
+          </tr>
+          <tr>
+            <td>Elnish Fernandes</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>98</td>
+            <td>Aditya Kulkarni</td>
+            <td>SSRVM</td>
+            <td>98</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Rhea Chedda</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>99</td>
+            <td>Priyansh Dedhia</td>
+            <td>BB</td>
+            <td>97</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>Kashish Madhyan</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>95</td>
+            <td>Vedant Shah</td>
+            <td>EURO</td>
+            <td>97</td>
+            <td>97</td>
+          </tr>
+          <tr>
+            <td>Trisha Manghi</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>92</td>
+            <td>Suhani Iyer</td>
+            <td>EURO</td>
+            <td>98</td>
+            <td>96</td>
+          </tr>
+          <tr>
+            <td>Karan Patel</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>91</td>
+            <td>Medhansh Mehta</td>
+            <td>EURO</td>
+            <td>95</td>
+            <td>96</td>
+          </tr>
+          <tr>
+            <td>Aanya Punctar</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>99</td>
+            <td>Samyak Chheda</td>
+            <td>EURO</td>
+            <td>98</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>Maher Dhami</td>
+            <td>EURO</td>
+            <td>98</td>
+            <td>100</td>
+            <td>Rajvi Balbar</td>
+            <td>GSS</td>
+            <td>98</td>
+            <td>97</td>
+          </tr>
+          <tr>
+            <td>Yashashree</td>
+            <td>EURO</td>
+            <td>94</td>
+            <td>100</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 2021-22 Table -->
+      <table class="achievement-table hidden" id="2022-table">
+        <tbody>
+          <tr>
+            <td>Mithila Nayak</td>
+            <td>AHIS</td>
+            <td>100</td>
+            <td>100</td>
+            <td>Drisha Gala</td>
+            <td>EURO</td>
+            <td>93</td>
+            <td>98</td>
+          </tr>
+          <tr>
+            <td>Manthan Nagada</td>
+            <td>SSRVM</td>
+            <td>100</td>
+            <td>99</td>
+            <td>Kanishtha Vyas</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>92</td>
+          </tr>
+          <tr>
+            <td>Dhruvin</td>
+            <td>EURO</td>
+            <td>100</td>
+            <td>98</td>
+            <td>Bhoomi Thakkar</td>
+            <td>EURO</td>
+            <td>98</td>
+            <td>92</td>
+          </tr>
+          <tr>
+            <td>Yash Dharamshi</td>
+            <td>NES</td>
+            <td>99</td>
+            <td>94</td>
+            <td>Kavish Doshi</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>Jay Gor</td>
+            <td>EURO</td>
+            <td>97</td>
+            <td>95</td>
+            <td>Siya Doshi</td>
+            <td>EURO</td>
+            <td>91</td>
+            <td>96</td>
+          </tr>
+          <tr>
+            <td>Mahima Mayuresh</td>
+            <td>EURO</td>
+            <td>99</td>
+            <td>95</td>
+            <td>Aryan Kumbhat</td>
+            <td>BB</td>
+            <td>97</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>Param Sangani</td>
+            <td>NES</td>
+            <td>99</td>
+            <td>97</td>
+            <td>Mehek Singh</td>
+            <td>SSRVM</td>
+            <td>92</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Hemit Bapna</td>
+            <td>EURO</td>
+            <td>95</td>
+            <td>100</td>
+            <td>Reyansh</td>
+            <td>BB</td>
+            <td>93</td>
+            <td>90</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Tables from previous answer inserted here -->
+    </section>
+
+    <section id="branches" class="section">
+      <h2>Our Branches</h2>
+      <div class="branches-grid">
+        <div class="branch-card">
+          <h3>Saidham Plaza</h3>
+          <p>P.K. Road, Mulund (W)</p>
+        </div>
+        <div class="branch-card">
+          <h3>Konark Darshan</h3>
+          <p>505, 5th Floor, Zaver Road, Mulund (W)</p>
+        </div>
+        <div class="branch-card">
+          <h3>Jumbo Podar Kids</h3>
+          <p>Bhandup (W)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Our Guidelines</h2>
+      <ul class="guidelines-list">
+        <li>Mandatory regular attendance and participation</li>
+        <li>Batch-specific WhatsApp groups for communication</li>
+        <li>Orientation session before classes commence</li>
+        <li>Strict maintenance of class decorum</li>
+        <li>Parent-teacher meetings for progress updates</li>
+        <li>Complete study material provided</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Begin Your Success Journey</h2>
+      <a href="https://wa.me/919821313298" class="whatsapp-cta">
+        <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+      </a>
+      <p style="margin-top: 2rem">98213 13298 | smitamaam@example.com</p>
+    </section>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Year Tab Functionality
+      document.querySelectorAll(".year-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document
+            .querySelectorAll(".year-tab")
+            .forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          document
+            .querySelectorAll(".achievement-table")
+            .forEach((table) => table.classList.add("hidden"));
+          document
+            .getElementById(`${tab.dataset.year}-table`)
+            .classList.remove("hidden");
+        });
+      });
+
+      // Smooth Scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({ behavior: "smooth" });
+          navLinks.classList.remove("active");
+        });
+      });
+    </script>
+    <script>
+      // Tab Functionality
+      document.querySelectorAll(".year-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active class from all tabs
+          document
+            .querySelectorAll(".year-tab")
+            .forEach((t) => t.classList.remove("active"));
+
+          // Add active class to clicked tab
+          tab.classList.add("active");
+
+          // Hide all tables
+          document.querySelectorAll(".achievement-table").forEach((table) => {
+            table.classList.add("hidden");
+          });
+
+          // Show selected table
+          const targetTable = document.getElementById(
+            `${tab.dataset.year}-table`
+          );
+          if (targetTable) targetTable.classList.remove("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
