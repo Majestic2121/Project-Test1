@@ -286,6 +286,42 @@
       .hidden {
         display: none;
       }
+      /* ▼▼▼ Add This ▼▼▼ */
+      .table-container {
+        position: relative;
+        overflow-x: auto;
+        margin: 2rem 0;
+        border-radius: 8px;
+      }
+
+      .column-indicator {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background: var(--navy-blue);
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        width: fit-content;
+        min-width: 100%;
+        border-bottom: 2px solid var(--gold);
+      }
+
+      .column-indicator div {
+        padding: 1rem;
+        text-align: center;
+        font-weight: 600;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* For mobile view */
+      @media (max-width: 768px) {
+        .column-indicator div {
+          padding: 0.8rem;
+          font-size: 0.9rem;
+        }
+      }
+      /* ▲▲▲ End of New CSS ▲▲▲ */
       @media (max-width: 768px) {
         .nav-links {
           display: none;
@@ -321,6 +357,90 @@
         }
       }
     </style>
+<style>
+  /* Excel-like Table Styles */
+  .table-container {
+      border: 1px solid #e1e1e1;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: white;
+      margin: 20px 0;
+  }
+  
+  .column-indicator {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      background: #f8f9fa;
+      border-bottom: 2px solid #d4d4d4;
+  }
+  
+  .column-indicator div {
+      padding: 12px 15px;
+      font-weight: 600;
+      color: #2c3e50;
+      text-align: center;
+      border-right: 1px solid #e1e1e1;
+      background: #f8f9fa;
+  }
+  
+  .achievement-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+  }
+  
+  .achievement-table td {
+      padding: 10px 15px;
+      border: 1px solid #e1e1e1;
+      text-align: center;
+      font-size: 0.95em;
+      color: #4a4a4a;
+  }
+  
+  .achievement-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+  }
+  
+  .achievement-table tr:hover {
+      background-color: #f5f5f5;
+  }
+  
+  /* Excel-like Header Freeze */
+  .column-indicator {
+      position: sticky;
+      left: 0;
+      top: 0;
+      z-index: 3;
+  }
+  
+  /* Perfect Alignment */
+  .column-indicator,
+  .achievement-table tr {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(120px, 1fr));
+  }
+  
+  .achievement-table td {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+  }
+  
+  /* Mobile Scroll */
+  @media (max-width: 768px) {
+      .table-container {
+          overflow-x: auto;
+      }
+      .column-indicator,
+      .achievement-table tr {
+          grid-template-columns: repeat(8, 140px);
+      }
+  }
+  </style>
+    </style>
+
   </head>
   <body>
     <header>
@@ -399,6 +519,11 @@
         <div class="year-tab" data-year="2022">2021-22</div>
       </div>
       <!-- Our Shining Stars Table -->
+      <div class="table-container">
+        <div class="column-indicator">
+            <div>Name</div><div>School</div><div>History</div><div>Geography</div>
+            <div>Name</div><div>School</div><div>History</div><div>Geography</div>
+        </div>
       <table class="achievement-table" id="stars-table">
         <tbody>
           <tr>
